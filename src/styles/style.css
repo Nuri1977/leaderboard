@@ -6,3 +6,78 @@
   margin: 0;
   padding: 0;
 }
+
+.container {
+  max-width: 760px;
+  margin: auto;
+}
+
+ul {
+  list-style: none;
+}
+
+.main-title {
+  font-size: 48px;
+  margin: 32px;
+}
+
+.main-area {
+  display: flex;
+  padding: 12px;
+}
+
+.results {
+  flex: 50%;
+  padding: 24px;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 0;
+}
+
+.result-header h2 {
+  font-size: 32px;
+}
+
+.result-list li {
+  font-size: 20px;
+  padding: 5px;
+  border: 2px solid grey;
+}
+
+.entries {
+  flex: 30%;
+  padding: 24px;
+}
+
+.entries-title {
+  margin: 24px 0;
+  font-size: 32px;
+}
+
+.entries-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-control {
+  font-size: 20px;
+  padding: 5px;
+  margin: 8px 0;
+}
+
+.form-submit {
+  text-align: right;
+  margin: 8px 0;
+}
+
+.btn {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.border {
+  border: 1px solid red;
+}
