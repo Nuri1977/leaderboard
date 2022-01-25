@@ -2,8 +2,15 @@ import './styles/style.css';
 
 const btnScores = document.getElementById('btn-scores');
 
-const displaySucces = () => (console.log('meseage succes'));
-const displayError = (err) => (console.log(err));
+const showMessage = (meassage) => {
+  const postMessage = document.getElementById('post-message');
+  postMessage.innerHTML = meassage;
+  postMessage.classList.remove('hidden');
+  setTimeout(() => {
+    postMessage.classList.add('hidden');
+    postMessage.innerHTML = '';
+  }, 3000);
+};
 
 const getScores = () => fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/dCWnK7FBkgPC2MczagXu/scores/')
   .then((response) => response.json());
@@ -21,7 +28,8 @@ const renderScores = async () => {
 
         scoreList.innerHTML += listItem;
       });
-    });
+    })
+    .catch((error) => showMessage(error));
 };
 
 btnScores.addEventListener('click', renderScores);
@@ -42,10 +50,14 @@ const postScore = (nameInput, scoreInput) => {
     .then(((response) => response.json()))
     .then((data) => {
       if (data.result) {
-        displaySucces();
+        showMessage('Score was submited succesfully');
+      } else {
+        showMessage('Error:  score was not submited');
       }
     })
-    .catch((error) => displayError(error));
+    .catch((error) => {
+      showMessage(error);
+    });
 };
 
 const nameInput = document.getElementById('name');
@@ -58,6 +70,5 @@ btnSubmit.addEventListener('click', (event) => {
   nameInput.value = '';
   scoreInput.value = '';
 });
-
 
 renderScores();
