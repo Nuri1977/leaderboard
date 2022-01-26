@@ -23,6 +23,74 @@ npm install
 npm run build
 npm start
 ```
+<br>
+
+## Interaction with the Leaderboard API
+- Each new game is created with the POST method using
+  ```bash
+      {
+          "name": "My cool new game"
+      }
+    ```
+ This request returns a result that holds the unique ID for that game:
+
+  ```bash
+    {
+      "result": "Game with ID: Zl4d7IVkemOTTVg2fUdz added."
+    }
+  ```
+>  This gameID is saved in the localStorage automatically
+
+
+  The two allowed actions are posting and getting of the scores
+- The POST request creates a new Leaderboard score for the given game sending user and score as parameters like this:
+
+  #### Endpoint
+  ```bash
+  https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/:id/scores/
+  ```
+
+  body parameters
+  ```bash
+  {
+	  "user": "John Doe",
+	  "score": 42
+  }
+  ```
+  and it returns
+
+  ```bash
+  {
+	  "result": "Leaderboard score created correctly."
+  }
+  ```
+- The GET request returns data in JSON format like this:
+-
+    #### Endpoint
+  ```bash
+  https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/:id/scores/
+  ```
+  It returns
+  ```bash
+  {
+    "result": [
+        {
+            "user": "John Doe",
+            "score": 42
+        },
+        {
+            "user": "Jahne Smith",
+            "score": 65
+        },
+        {
+            "user": "SpiderMan",
+            "score": 25
+        }
+    ]
+  }
+  ```
+
+  <br>
 
 ## Authors
 
