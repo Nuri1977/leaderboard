@@ -4,6 +4,7 @@
 
 > Microverse project on practcing gitflow, HTML, CSS and Javascript.
 
+![screenshot](./src/leaderboard.jpg)
 
 Additional description about the project and its features.
 

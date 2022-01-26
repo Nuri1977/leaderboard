@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-<script defer src="main.js"></script></head>
-<body>
-  <h1>Hello webpack!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LEADERBOARD</title>
+  <script defer src="main.js"></script></head>
+  <body>
+    <main class="container">
+      <h1 class="main-title">Roblox Ninja Leaderboard</h1>
+      <h3 id="post-message" class="hidden"></h3>
+      <div class="main-area">
+        <div class="results">
+          <div class="result-header">
+            <h2>Recent scores</h2>
+            <button type="button" id='btn-scores' class="btn">Refresh</button>
+          </div>
+          <ul id="score-list" class="result-list">
+          </ul>
+        </div>
+        <div class="entries">
+          <h2 class="entries-title">Add your score</h2>
+          <form action="/" class="entries-form">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+              class="form-control"
+            />
+            <input
+              type="number"
+              id="score"
+              name="score"
+              placeholder="Your Score"
+              required
+              class="form-control"
+            />
+            <div class="form-submit">
+              <button type="submit" id="btn-submit" class="btn">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
